@@ -1,4 +1,4 @@
-//풀페이지 스크롤
+//1.풀페이지 스크롤
 $(function(){
     $('#fullpage').fullpage({
         fingersonly: true,
@@ -15,22 +15,29 @@ $(function(){
     });
 });
 
-//GNB
+    
+    
+    
+    
+    
+//2.GNB
 $(function(){
     setGnb();
     function setGnb(){
-        $('.innerHeader .gnb  li  a').on('mouseenter focus', function(){
+        $('.innerHeader .gnb > li > a ').on('mouseenter focus', function(){
             $('.innerHeader ').addClass('on');
-            $('.innerHeader .gnb > li > .subMenu').addClass('on');
+            $('.innerHeader .gnb > li > .inner').addClass('on');
+            $('header').css({'border':'none'});
         });
         $('header').on('mouseleave', function(){
             $('.innerHeader ').removeClass('on');
-            $('.innerHeader .gnb > li > .subMenu').removeClass('on');
+            $('.innerHeader .gnb > li > .inner').removeClass('on');
+            $('header').css({'border':'1px solid rgba(255,255,255,0.1)'});
         });
     }
 });
 
-//이미지슬라이드
+//3.이미지슬라이드
 $(function(){
     $('.visual').slick({
         arrows: false,
@@ -39,7 +46,7 @@ $(function(){
         autoplay : true,
         pauseOnHover: false,
         pauseOnFocus: false,
-        autoplaySpeed : 3000,
+        autoplaySpeed : 2800,
         customPaging: function(slider, i){
             var tit = $(slider.$slides[i]).find('.dot').html();
             return '<div class="pager-tit" class= "+ i +">'+ tit + '</div>';     
@@ -47,12 +54,15 @@ $(function(){
     });
 });
 
+//4.이미지슬라이드- 넓이 높이 스크립트
+
 $(function(){
     var winW = $(window).width();
     var winH = $(window).height();
          list = $('.visual .list');
     list.css({width: winW+ 'px', height:winH+ 'px'});
 });
+
 
  
 
