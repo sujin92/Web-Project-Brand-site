@@ -14,11 +14,6 @@ $(function(){
         }
     });
 });
-
-    
-    
-    
-    
     
 //2.GNB
 $(function(){
